@@ -1,0 +1,29 @@
+body {
+    padding-top: 70px;
+}
+
+
+#content{
+text-align: center;
+padding-top: 25%;
+}
+
+#btnChange{
+    margin: 20px 0px 20px 0px;
+}
+
+#btnCopy{
+    margin: 20px 0px 20px 0px;
+}
+
+hr{
+    margin: auto;
+    margin-top: 50px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+h6{
+    margin-top: 40px;
+    text-align: center;
+}
