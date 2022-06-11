@@ -1,29 +1,74 @@
+@font-face {
+    font-family: 'AlmaraiBold';
+    src: url('fonts/Almarai-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    font-size: 16px;
+    font-family: AlmaraiBold;
+}
+
 body {
-    padding-top: 70px;
+    background-color: white;
+}
+
+#mainContainer {
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 
-#content{
-text-align: center;
-padding-top: 25%;
+
+#enteredNumber,
+hr,
+p {
+    width: 100%;
 }
 
-#btnChange{
-    margin: 20px 0px 20px 0px;
+p {
+    text-align: center;
+    font-family: AlmaraiBold;
 }
 
-#btnCopy{
-    margin: 20px 0px 20px 0px;
+
+
+#btnChange {
+    margin: 1rem 0px;
+    width: 60%;
 }
 
-hr{
-    margin: auto;
-    margin-top: 50px;
+hr {
+    margin-top: 1rem;
     border-top: 1px solid #f8f8f8;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-h6{
-    margin-top: 40px;
+h6 {
+    margin: 1rem;
     text-align: center;
+}
+
+.checkClass {
+    align-self: flex-start;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding-top: 0.5rem;
 }

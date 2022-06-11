@@ -1,3 +1,5 @@
+
+
 var ones = {
     0: "صفر",
     1: "واحد",
@@ -95,15 +97,15 @@ var trillions = {
  * والتي يتم من خلالها تفقيط الأرقام
  */
 function tafqeet(number) {
-    
+
     /**
      * متغير لتخزين النص المفقط بداخله
      */
 
     var value = "";
-    number = parseInt (number);
+    number = parseInt(number);
     //التحقق من أن المتغير يحتوي أرقامًا فقط، وأقل من تسعة وتسعين تريليون
-    if (number.toString ().match(/^[0-9]+$/) != null && number.toString().length <= 14) {
+    if (number.toString().match(/^[0-9]+$/) != null && number.toString().length <= 14) {
         switch (number.toString().length) {
             /**
              * إذا كان العدد من 0 إلى 99
@@ -169,13 +171,13 @@ function tafqeet(number) {
      * تظهر هذه الزوائد نتيجة بعض الفروق في عملية التفقيط
      * ولإزالتها يتم استخدام هذا السطر
      */
-    return value.replace (/وصفر/g,"")
-    .replace (/وundefined/g,"")
-    .replace(/ +(?= )/g,'')
-    .replace (/صفر و/g,"")
-    .replace (/صفر/g,"")
-    .replace (/مئتان أ/,"مائتا أ")
-    .replace (/مئتان م/,"مائتا م");
+    return value.replace(/وصفر/g, "")
+        .replace(/وundefined/g, "")
+        .replace(/ +(?= )/g, '')
+        .replace(/صفر و/g, "")
+        .replace(/صفر/g, "")
+        .replace(/مئتان أ/, "مائتا أ")
+        .replace(/مئتان م/, "مائتا م");
 }
 
 
@@ -193,7 +195,7 @@ function oneTen(number) {
 
     //من 0 إلى 12
     if (number <= 12) {
-        switch (parseInt (number)) {
+        switch (parseInt(number)) {
             case 0:
                 value = ones["0"];
                 break;
@@ -246,17 +248,17 @@ function oneTen(number) {
      * والثانية من الآحاد
      */
     else {
-        var first = getNth (number, 0,0);
-        
-        var second = getNth (number, 1,1);
+        var first = getNth(number, 0, 0);
 
-        if(tens[first] == "عشر"){
+        var second = getNth(number, 1, 1);
+
+        if (tens[first] == "عشر") {
             value = ones[second] + " " + tens[first];
-        } 
-        else{
+        }
+        else {
             value = ones[second] + " و" + tens[first];
         }
-        
+
     }
 
     return value;
@@ -270,16 +272,16 @@ function oneTen(number) {
  */
 function hundred(number) {
     var value = "";
-    
+
     /**
      * إذا كان الرقم لا يحتوي على ثلاث منازل
      * سيتم إضافة أصفار إلى يسار الرقم
      */
-    while (number.toString().length !=3){
-        number = "0"+number;
+    while (number.toString().length != 3) {
+        number = "0" + number;
     }
 
-    var first = getNth (number, 0,0);
+    var first = getNth(number, 0, 0);
 
     /**
      * تحديد قيمة الرقم الأول
@@ -321,7 +323,7 @@ function hundred(number) {
      * إضافة منزلة العشرات إلى الرقم المفقط
      * باستخدام دالة العشرات السابقة
      */
-    value = value + " و"+oneTen (parseInt (getNth (number,1,2)));
+    value = value + " و" + oneTen(parseInt(getNth(number, 1, 2)));
     return value;
 }
 
@@ -331,7 +333,7 @@ function hundred(number) {
  * الدالة الخاصة بالآلاف
  */
 function thousand(number) {
-    return thousandsTrillions (thousands["1"],thousands["2"], thousands["39"], thousands["1199"], 0, parseInt (number),  (getNthReverse (number, 4)));
+    return thousandsTrillions(thousands["1"], thousands["2"], thousands["39"], thousands["1199"], 0, parseInt(number), (getNthReverse(number, 4)));
 }
 
 /**
@@ -340,7 +342,7 @@ function thousand(number) {
  * الدالة الخاصة بالملايين 
  */
 function million(number) {
-    return thousandsTrillions (millions["1"],millions["2"], millions["39"], millions["1199"], 3, parseInt (number),  (getNthReverse (number, 7)));
+    return thousandsTrillions(millions["1"], millions["2"], millions["39"], millions["1199"], 3, parseInt(number), (getNthReverse(number, 7)));
 }
 
 
@@ -350,7 +352,7 @@ function million(number) {
  * الدالة الخاصة بالمليارات 
  */
 function billion(number) {
-    return thousandsTrillions (billions["1"],billions["2"], billions["39"], billions["1199"], 6, parseInt (number),  (getNthReverse (number, 10)));
+    return thousandsTrillions(billions["1"], billions["2"], billions["39"], billions["1199"], 6, parseInt(number), (getNthReverse(number, 10)));
 }
 
 
@@ -360,7 +362,7 @@ function billion(number) {
  * الدالة الخاصة بالترليونات 
  */
 function trillion(number) {
-    return thousandsTrillions (trillions["1"],trillions["2"], trillions["39"], trillions["1199"], 9, parseInt (number),  (getNthReverse (number, 13)));
+    return thousandsTrillions(trillions["1"], trillions["2"], trillions["39"], trillions["1199"], 9, parseInt(number), (getNthReverse(number, 13)));
 }
 
 
@@ -377,43 +379,43 @@ function trillion(number) {
  * @param {*} number 
  * @param {*} other 
  */
-function thousandsTrillions (one, two, three, eleven, diff, number, other){
+function thousandsTrillions(one, two, three, eleven, diff, number, other) {
     /**
      * جلب المنازل المتبقية
      */
-    other = parseInt (other);
-    other = tafqeet (other);
-    
+    other = parseInt(other);
+    other = tafqeet(other);
+
     /**
      * إذا كان المتبقي يساوي صفر
      */
-    if (other == ""){
+    if (other == "") {
         other = "صفر"
     }
 
     var value = "";
 
-    number = parseInt (number);
+    number = parseInt(number);
 
     /**
      * التحقق من طول الرقم
      * لاكتشاف إلى أي منزلة ينتمي
      */
-    switch (number.toString().length){
+    switch (number.toString().length) {
         /**
          * ألوف، أو ملايين، أو مليارات، أو تريليونات
          */
-        case 4+diff:
-            var ones = parseInt (getNth (number, 0,0));
-            switch (ones){
+        case 4 + diff:
+            var ones = parseInt(getNth(number, 0, 0));
+            switch (ones) {
                 case 1:
-                    value = one  + " و"+ (other);
+                    value = one + " و" + (other);
                     break;
                 case 2:
-                    value = two + " و"+ (other);
+                    value = two + " و" + (other);
                     break;
                 default:
-                    value = oneTen (ones) +" "+ three + " و"+ (other);
+                    value = oneTen(ones) + " " + three + " و" + (other);
                     break;
             }
             break;
@@ -421,45 +423,45 @@ function thousandsTrillions (one, two, three, eleven, diff, number, other){
         /**
          * عشرات الألوف، أو عشرات الملايين، أو عشرات المليارات، أو عشرات التريليونات
          */
-        case 5+diff:
-            var tens = parseInt (getNth (number, 0,1));
-            switch (tens){
+        case 5 + diff:
+            var tens = parseInt(getNth(number, 0, 1));
+            switch (tens) {
                 case 10:
-                    value = oneTen (tens) +" "+ three + " و"+ (other);
+                    value = oneTen(tens) + " " + three + " و" + (other);
                     break;
                 default:
-                    value = oneTen (tens) +" "+ eleven + " و"+ (other);
+                    value = oneTen(tens) + " " + eleven + " و" + (other);
                     break;
             }
             break;
-        
+
         /**
          *مئات الألوف، أو مئات الملايين، أو مئات المليارات
          */
-        case 6+diff:
-            var hundreds = parseInt (getNth (number, 0,2));
-            
-            var two = parseInt (getNth (number, 1,2));
+        case 6 + diff:
+            var hundreds = parseInt(getNth(number, 0, 2));
+
+            var two = parseInt(getNth(number, 1, 2));
             var th = "";
-            switch (two){
+            switch (two) {
                 case 0:
                     th = one;
                     break;
-                
+
                 default:
                     th = eleven;
-                    break;    
-            }
-            switch (tens){
-                case 100<=tens<=199:
-                    value = hundred (hundreds) +" "+ th + " و"+ (other);
                     break;
-                case 200<=tens<=299:
-                    value = hundred (hundreds) +" "+ th + " و"+ (other);
+            }
+            switch (tens) {
+                case 100 <= tens <= 199:
+                    value = hundred(hundreds) + " " + th + " و" + (other);
+                    break;
+                case 200 <= tens <= 299:
+                    value = hundred(hundreds) + " " + th + " و" + (other);
                     break;
                 default:
-                    value = hundred (hundreds) +" "+ th + " و"+ (other);
-                    break;    
+                    value = hundred(hundreds) + " " + th + " و" + (other);
+                    break;
             }
             break;
     }
@@ -472,10 +474,10 @@ function thousandsTrillions (one, two, three, eleven, diff, number, other){
 /**
  * دالة لجلب أجزاء من الرقم المراد تفقيطه
  */
-function getNth(number, first, end){
+function getNth(number, first, end) {
     var finalNumber = "";
-    for (var i=first;i<=end;i++){
-        finalNumber = finalNumber + String (number).charAt(i);
+    for (var i = first; i <= end; i++) {
+        finalNumber = finalNumber + String(number).charAt(i);
     }
     return finalNumber;
 }
@@ -485,13 +487,16 @@ function getNth(number, first, end){
  * @param {*} number 
  * @param {*} limit 
  */
-function getNthReverse(number, limit){
+function getNthReverse(number, limit) {
     var finalNumber = "";
     var x = 1;
-    while (x != limit){
-        finalNumber = String (number).charAt(number.toString().length-x) + finalNumber;
+    while (x != limit) {
+        finalNumber = String(number).charAt(number.toString().length - x) + finalNumber;
         x++;
     }
 
     return finalNumber;
 }
+
+
+module.exports = { tafqeet };

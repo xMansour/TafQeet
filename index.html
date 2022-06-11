@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -7,26 +7,34 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="app.css">
-    <script src="tafqeet.js"></script>
+
 </head>
 
-<body style="background: rgb(255, 255, 255);">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-s-12 col-xs-12">
-                <div class="content">
-                    <input type="number" class="form-control col-md-12 col-s-12" id="enteredNumber"
-                        placeholder="ادخل الرقم هنا">
-                    <button type="button" id="btnChange" class="btn btn-primary col-md-4 col-s-4">تفقيط</button>
-                    <button type="button" id="btnCopy" class="btn btn-success col-md-4 col-s-4 float-end">نسخ</button>
-                    <hr class="col-md-8 col-s-8">
-                    <h6 class="form-label col-md-12 col-s-12">الرقم المحول</h6>
-                </div>
-            </div>
+<body>
+    <div id="mainContainer">
+        <input type="number" class="form-control" id="enteredNumber" placeholder="ادخل الرقم هنا" maxlength="15"
+            required>
+        <button type="button" id="btnChange" class="btn btn-primary">تفقيط و نسخ</button>
+        <div class="checkClass">
+            <label for="fakatCheck">فقط</label>
+            <input type="checkbox" value="fakatOn" id="fakatCheck">
+        </div>
+        <div class="checkClass">
+            <label for="pracesCheck">اقواس</label>
+            <input type="checkbox" value="pracesOn" id="pracesCheck">
         </div>
 
+        <hr>
+        <h6>الرقم المحول</h6>
+
+
     </div>
-    <script src="views.js"></script>
+    <footer>
+        <p>Made with ❤️ by Mahmoud Mansour <br>Contact via email @ <a
+                href="mailto:MElsayedMansour96@gmail.com">MElsayedMansour96@gmail.com</a><br>Or via
+            phone @ 01027293859</p>
+    </footer>
+
 </body>
 
 </html>
