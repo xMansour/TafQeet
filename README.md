@@ -1,9 +1,10 @@
 # Welcome to TafQeet!
 
-[![xMansour - kidSafe](https://img.shields.io/static/v1?label=xMansour&message=TafQeet&color=blue&logo=github)](https://github.com/xMansour/TafQeet "Go to GitHub repo") [![stars - kidSafe](https://img.shields.io/github/stars/xMansour/TafQeet?style=social)](https://github.com/xMansour/TafQeet) [![forks - kidSafe](https://img.shields.io/github/forks/xMansour/TafQeet?style=social)](https://github.com/xMansour/TafQeet)
-[![Github All Releases](https://img.shields.io/github/downloads/xmansour/TafQeet/total.svg)]()
+[![xMansour - TafQeet](https://img.shields.io/static/v1?label=xMansour&message=TafQeet&color=blue&logo=github)](https://github.com/xMansour/TafQeet "Go to GitHub repo")
+[![stars - TafQeet](https://img.shields.io/github/stars/xMansour/TafQeet?style=social)](https://github.com/xMansour/TafQeet)
+[![forks - TafQeet](https://img.shields.io/github/forks/xMansour/TafQeet?style=social)](https://github.com/xMansour/TafQeet)
+[![GitHub release](https://img.shields.io/github/release/xMansour/TafQeet?include_prereleases=&sort=semver&color=blue)](https://github.com/xMansour/TafQeet/releases/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
-
 
 Table of Contents
  1. [About The Project](#about)
