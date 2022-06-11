@@ -17,7 +17,7 @@ Table of Contents
 
 ## About The Project<a id='about'></a>
 
-**TafQeet** is an Electron windows app to convert numbers into it's corresponding arabic words.
+**TafQeet** is an Electron windows app to convert numbers into it's corresponding arabic words based on <a href="https://github.com/ASammour/TafqeetJs">ASammour's TafqeetJs</a> libarary.
 
 
 ## Built With<a id='built-with'>
