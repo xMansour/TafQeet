@@ -62,5 +62,5 @@ Table of Contents
                                                      
 ## License <a id='license'></a> Released under [MIT](/LICENSE) by [@xMansour](https://github.com/xMansour).
   
-## Contact me at <a id='contact'></a>  MansourAppDevelopment@gmail.com or through whatsApp on +201027293859.
+## Contact me at <a id='contact'></a>  MansourAppDevelopment@gmail.com.
 
